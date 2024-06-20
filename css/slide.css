@@ -1,0 +1,22 @@
+.right-column {
+    width: 50%;
+    float: right;
+    /* Add other styles as needed */
+}
+
+.slideshow-container {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    margin: auto;
+}
+
+.slide {
+    display: none;
+    width: 100%;
+    height: auto;
+}
+
+.slide.active {
+    display: block;
+}

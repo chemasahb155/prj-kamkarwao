@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kam Karwao</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="icon" href="./images/image.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="lib/ionicons/css/ionicons.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init({
+        publicKey: "5uR_EUv4Iy8q0AOsm",
+      });
+   })();
+</script>
+
+
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+        header {
+            background-color: #333; /* Dark grey background for the navbar */
+            padding: 10px 0;
+            width: 100%;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            transition: background 0.3s;
+        }
+        header .logo img {
+            width: 130px;
+            height: auto;
+        }
+        header .fas.fa-bars {
+            display: none;
+        }
+        header .navbar ul {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+        header .navbar ul li {
+            margin-left: 20px;
+        }
+        header .navbar ul li a {
+            text-decoration: none;
+            color: #fff; /* White text color */
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: background 0.3s, color 0.3s;
+        }
+        header .navbar ul li a:hover,
+        header .navbar ul li a.active {
+            background-color: #007bff; /* Highlight color */
+            color: #fff;
+        }
+        body.scrolled header {
+            background-color: #333; /* Ensure the background remains dark grey on scroll */
+        }
+        #book:hover {
+            background-color: #0056b3;
+        }
+        
+        .select-section {
+            text-align: center;
+            margin: 30px 0;
+        }
+        .select-section h2 {
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+        .select-section select {
+            padding: 10px;
+            width: 200px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+        .select-section select {
+            padding: 12px; /* Increased padding */
+            font-size: 2.0rem; /* Increased font size */
+            width: 220px; /* Increased width */
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+        .select-section h2 {
+            margin-bottom: 30px;
+            font-size: 2.5rem; /* Increased font size */
+        }
+        .custom-font {
+        font-family: Arial, sans-serif; /* Change this to your desired font family */
+        font-size : 22px;
+    }
+    #services-section {
+    background-color: #fffdfd;
+    padding: 130px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+#services-section h2 {
+    color: #090909;
+    font-size: 47px;
+    font-weight: bold;
+    font-family: Helvetica;
+    margin-bottom: 20px;
+}
+
+#services-section .column {
+    width: 45%;
+}
+
+#services-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+#services-section ul li {
+    background-color: #262121;
+    border-radius: 20px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+#services-section ul li:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+#services-section ul li img {
+    width: 40px;
+    margin-right: 10px;
+}
+
+#services-section ul li span {
+    font-size: 18px;
+    font-family: Helvetica;
+    color: #ffffff;
+}
+
+#services-section p {
+    color: #232222;
+    font-size: 18px;
+    font-family: Helvetica;
+    margin-top: 20px;
+    line-height: 1.5;
+}
+.request-button {
+    display: block;
+    width: 250px; /* Adjust width as needed */
+    margin: 0 auto; /* Center the button horizontally */
+    padding: 15px 30px; /* Adjust padding as needed */
+    font-size: 16px;
+    color: #ffffff;
+    background-color: #242424;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.request-button:hover {
+    background-color: #000000; /* Darker color on hover */
+}
+      .co
+    </style>
+</head>
+<body>
+    <header class="header ">
+        <a href="#" class="logo"><img src="./images/logo.png" alt="Logo" style="width: 130px; height: auto;"></a>
+        <div class="fas fa-bars"></div>
+        <nav class="navbar navbar-fixed-top">
+            <ul>
+                <li><a href="#home" class="active">home</a></li>
+                <li><a href="request.html">Request Service</a></li>
+                <li><a href="#services">services</a></li>
+                <li><a href="#contact">contact</a></li>
+                <li><a href="login.html#login">Login</a></li>
+                <li><a href="signup.html">Signup</a></li>
+            </ul>
+        </nav>
+    </header>
+
+  <section id="home" class="home">
+      <!-- <h1>Welcome to Kam Karwao</h1>
+      <h2>Get your Work Done on Single Call</h2>
+      <h3 class="uppercase" style="color: white; font-size: 30px;">Kaam Hai? hume bulao</h3> -->
+    <div class="wave wave1"></div>
+    <div class="wave wave2"></div>
+    <div class="wave wave3"></div>
+  </section>
+
+  <!-- <section id="about" class="about">
+    <h1 class="heading">about us</h1>
+    <div class="row">
+        <div class="content">
+            <h3>We make creativity work for your You</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint molestiae, beatae totam cupiditate autem enim optio sit voluptatibus cumque ducimus deserunt voluptatem voluptas laboriosam, maxime labore architecto laudantium porro adipisci!</p>
+            <a href="#"><button class="btn">Read More</button></a>
+        </div>
+    </div>
+  </section> -->
+  <div class="select-section">
+    <h2>Select Your Lahore Area</h2>
+    <select>
+        <option value="johar-town">Johar Town</option>
+        <option value="model-town">Model Town</option>
+        <option value="wapda-town">Wapda Town</option>
+        <option value="muslim-town">Muslim Town</option>
+        <option value="faisal-town">Faisal Town</option>
+        <option value="ali-town">Ali Town</option>
+    </select>
+</div>
+  <div id="services" class="pt-5 pb-5" style="background-color: #1b1b1b;">
+    <div class="container">
+        <div class="row">
+            <div class="section-head col-sm-12" id="service">
+                <h1 style="text-align: center; color: #fcfcfc;">Our Services</h1>
+            </div>
+            
+            <div class="col-lg-4 col-sm-6">
+                <div class="item">
+                    <a href="service.html">
+                    <span class="icon feature_box_col_two"> <img src="./images/a1.png" alt="service logo">
+        </span>
+                <h6 style="font-size: 29px;    text-align: center; font-family:Helvetica; color: #272424; font-weight: bold;">Home Service</h6>
+            </a> </div>
+            </div>
+            <div class="col-lg-4 col-sm-6">
+                <div class="item">
+                    <a href="service2.html">
+                    <span class="icon feature_box_col_two"> <img src="./images/a2.png" alt="service logo">
+        </span>
+                <h6 style="font-size: 29px;    text-align: center; font-family:Helvetica; color: #272424; font-weight: bold;">Cleaning Service</h6>
+            </a> </div>
+            </div>
+            <div class="col-lg-4 col-sm-6">
+                <div class="item">
+                    <a href="service4.html">
+                    <span class="icon feature_box_col_two"> <img src="./images/a3.png" alt="service logo">
+        </span>
+                <h6 style="font-size: 29px;    text-align: center; font-family:Helvetica; color: #272424; font-weight: bold;">Solar Home Service</h6>
+            </a> </div>
+            </div>
+            <div class="col-lg-4 col-sm-6">
+                <div class="item">
+                    <a href="service5.html">
+                    <span class="icon feature_box_col_two"> <img src="./images/a4.png" alt="service logo">
+        </span>
+                <h6 style="font-size: 25px;    text-align: center; font-family:Helvetica; color: #272424; font-weight: bold;">Chef & Food Service</h6>
+            </a> </div>
+            </div>
+            <div class="col-lg-4 col-sm-6">
+                <div class="item">
+                    <a href="sercive3.html">
+                    <span class="icon feature_box_col_two"> <img src="./images/spa.png" alt="service logo">
+        </span>
+                <h6 style="font-size: 25px;    text-align: center; font-family:Helvetica; color: #272424; font-weight: bold;">Beauty Service</h6>
+            </a> </div>
+            </div>
+            <div class="col-lg-4 col-sm-6">
+                <div class="item">
+                    <a href="service6.html">
+                    <span class="icon feature_box_col_two"> <img src="./images/a6.png" alt="service logo">
+        </span>
+                <h6 style="font-size: 29px;    text-align: center; font-family:Helvetica; color: #272424; font-weight: bold;">Pet Care Service</h6>
+            </a> </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script> -->
+
+  
+<section id="services-section">
+    <div class="column">
+        <ul>
+            <li>
+                <img src="./images/z1.png" alt="Verified Experts">
+                <span>Verified Experts</span>
+            </li>
+            <li>
+                <img src="./images/z2.png" alt="Fair Services Charges">
+                <span>Fair Services Charges</span>
+            </li>
+            <li>
+                <img src="./images/z3.png" alt="Guaranteed Results">
+                <span>Guaranteed Results</span>
+            </li>
+            <li>
+                <img src="./images/z4.png" alt="Doorstep Service">
+                <span>Fair Services Charges</span>
+            </li>
+            <li>
+                <img src="./images/z5.png" alt="Follow guidlines">
+                <span>Guaranteed Results</span>
+            </li>
+            <li>
+                <img src="./images/z6.png" alt="60 mins Arrival Time">
+                <span>60 mins Arrival Time</span>
+            </li>
+        </ul>
+    </div>
+    <div class="column">
+        <h2>Beyond the Ordinary: Unveiling Our Exclusive Service Advantages</h2>
+        <p>We understand your fears about letting a stranger come inside your home. We know that you cannot trust just any other person with your home possessions and your family's safety. That is why we have come up with services that cater to all your fears and concerns.</p>
+        <button class="request-button">Request a Service</button>
+        </div>
+   
+</section>
+
+<div class="clients mt-100">
+    <div class="container">
+        <div class="section-header">
+            <h2>Our Recent investors & Collaborators</h2>
+            <p>
+               We have Collaborated with these brands recently. 
+            </p>
+        </div>
+        <div class="owl-carousel clients-carousel">
+            <img src="./images/a1.png" alt="Client Logo">
+            <img src="./images/a2.png" alt="Client Logo">
+            <img src="./images/a3.png" alt="Client Logo">
+            <img src="./images/a4.png" alt="Client Logo">
+            <img src="./images/a5.png" alt="Client Logo">
+            <img src="./images/a6.png" alt="Client Logo">
+            <img src="./images/a2.png" alt="Client Logo">
+            <img src="./images/a4.png" alt="Client Logo">
+        </div>
+    </div>
+</div>
+
+<div class="communicate">
+    <h3 style="color: #000000;">If you want to become Master in KAM KARWAO.</h3>
+    <p style="color: #000000;"> Then Contact Us Today</p>
+    <a href="#contact"><button class="btn">Become Master</button></a>
+</div>
+
+<section id="services-section">
+    <div class="column">
+        <h2 style="color: #000000;">Become A Master in KAM KARWAO. </h2>
+        <p style="color: #000000;">Join Kaam Karwao and start earning money by offering your services as a skilled worker! Whether you're a plumber, electrician, carpenter, or have any other expertise, our platform connects you with potential clients seeking your services. Sign up now to showcase your skills, find job opportunities, and boost your income!.</p>
+        <button class="request-button">Become A Master</button>
+    
+    </div>
+    <div class="column">
+        <ul>
+            <li>
+                <img src="./images/z1.png" alt="Verified Experts">
+                <span>Earn A Good Salary</span>
+            </li>
+            <li>
+                <img src="./images/z2.png" alt="Fair Services Charges">
+                <span>Increase your customer circle</span>
+            </li>
+        
+            <li>
+                <img src="./images/z5.png" alt="Follow guidlines">
+                <span>Get Verified Customers</span>
+            </li>
+            <li>
+                <img src="./images/z6.png" alt="60 mins Arrival Time">
+                <span>Get Salary and Money on Time</span>
+            </li>
+        </ul>
+        </div>
+   
+</section>
+
+
+<a href="#" class="back-to-top"><i class="ion-ios-arrow-up"></i></a>
+<script src="lib/jquery/jquery.min.js"></script>
+<script src="lib/jquery/jquery-migrate.min.js"></script>
+<script src="lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="lib/easing/easing.min.js"></script>
+<script src="lib/waypoints/waypoints.min.js"></script>
+<script src="lib/counterup/counterup.min.js"></script>
+<script src="lib/owlcarousel/owl.carousel.min.js"></script>
+<script src="lib/lightbox/js/lightbox.min.js"></script>
+
+<section class="team" style="margin-top: 7rem;">
+  <h1 class="heading" style="margin-top: -1.5rem;" id="team">our team</h1>
+  <p></p>
+  <div class="row">
+      <div class="card">
+          <div class="image">
+              <img src="./images/usman.jpg" alt="Team member 1">
+          </div>
+          <div class="info">
+              <h3>M. Usman</h3>
+              <span>CEO</span>
+              <div class="icons">
+                  <a href="https://www.facebook.com/" class="fab fa-facebook-f"></a>
+                  <a href="https://twitter.com/login" class="fab fa-twitter"></a>
+                  <a href="https://www.instagram.com/" class="fab fa-instagram"></a>
+                  <a href="https://www.linkedin.com/" class="fab fa-linkedin"></a>
+              </div>
+          </div>
+      </div>
+  </div>
+  <div class="row">
+      <div class="card">
+          <div class="image">
+              <img src="./images/ahmad.jpg" alt="Team member 1">
+          </div>
+          <div class="info">
+              <h3>Ahmad Abbas</h3>
+              <span>Manager</span>
+              <div class="icons">
+                  <a href="https://www.facebook.com/" class="fab fa-facebook-f"></a>
+                  <a href="https://twitter.com/login" class="fab fa-twitter"></a>
+                  <a href="https://www.instagram.com/" class="fab fa-instagram"></a>
+                  <a href="https://www.linkedin.com/" class="fab fa-linkedin"></a>
+              </div>
+          </div>
+      </div>
+  </div>
+  <div class="row">
+      <div class="card">
+          <div class="image">
+              <img src="./images/husnain.jpg" alt="Team member 1">
+          </div>
+          <div class="info">
+              <h3>Husnain Hassan</h3>
+              <span>Manager</span>
+              <div class="icons">
+                  <a href="https://www.facebook.com/" class="fab fa-facebook-f"></a>
+                  <a href="https://twitter.com/login" class="fab fa-twitter"></a>
+                  <a href="https://www.instagram.com/" class="fab fa-instagram"></a>
+                  <a href="https://www.linkedin.com/" class="fab fa-linkedin"></a>
+              </div>
+          </div>
+      </div>
+  </div>
+ </section>
+
+<section id="contact" class="contact">
+    <h1 class="heading">get in touch</h1>
+</section>
+<div class="contact-in">
+    <div class="contact-map">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d435519.2274167598!2d74.00472289272936!3d31.483103659918054!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39190483e58107d9%3A0xc23abe6ccc7e2462!2sLahore%2C%20Punjab%2C%20Pakistan!5e0!3m2!1sen!2s!4v1716359955865!5m2!1sen!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" width="100%" height="auto" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+    <div class="contact-form">
+        <form id="contact-form">
+            <input type="text" id="from_name" name="name" placeholder="Name" class="contact-form-txt" required>
+            <input type="tel" id="contact_no" name="contact_no" pattern="[0-9]{11}" required placeholder="Contact number" maxlength="11" class="contact-form-phone">
+            <input type="email" id="email_id" name="email" placeholder="Email" class="contact-form-email" required>
+            <textarea id="message" placeholder="Your Message" name="message" class="contact-form-txtarea" required></textarea>
+            <input onclick="sendmail()" type="submit" value="Submit" name="submit" class="contact-form-btn">
+        </form>
+    </div>
+    </div>
+
+    <section class="faq">
+      <h1 class="heading" style="margin-top: -2rem; color: #eceeef;" id="faq">FAQ</h1>
+      <div class="row">
+          <div class="accordion-container">
+              <div class="accordion">
+                  <div class="accordion-header">
+                      <span>+</span>
+                      <h3>How much will it cost?</h3>
+                  </div>
+                  <div class="accordion-body">
+                      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Beatae, atque ipsum! Officiis, veritatis odit quas maxime dolores, itaque incidunt consequatur aut culpa hic ullam a laborum exercitationem, tenetur quaerat architecto.</p>
+                  </div>
+              </div>
+              <div class="accordion">
+                  <div class="accordion-header">
+                      <span>+</span>
+                      <h3>How long it takes to Complete work?</h3>
+                  </div>
+                  <div class="accordion-body">
+                      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis dolore nam perferendis tempora enim exercitationem reiciendis voluptates, esse quibusdam deserunt! Aspernatur, assumenda praesentium repudiandae iusto laudantium sunt minus voluptatum architecto?</p>
+                  </div>
+              </div>
+              <div class="accordion">
+                  <div class="accordion-header">
+                      <span>+</span>
+                      <h3>When do I pay?</h3>
+                  </div>
+                  <div class="accordion-body">
+                      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsa totam iusto, facere quidem quasi provident iste officia nam voluptates saepe modi eos voluptatibus, incidunt nulla qui minima voluptate consequatur suscipit.</p>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
+
+    <div class="footer">
+      <div class="footer-top">
+          <div class="container">
+              <div class="row">
+                  <div class="col-lg-3 col-md-6 footer-links">
+                      <h4>About Us</h4>
+                      <ul>
+                          <li><i class="ion-ios-arrow-forward"></i> <a href="#">Home</a></li>
+                          <li><i class="ion-ios-arrow-forward"></i> <a href="#about">About us</a></li>
+                          <li><i class="ion-ios-arrow-forward"></i> <a href="#service">Our services</a></li>
+                          <li><i class="ion-ios-arrow-forward"></i> <a href="#">Terms & condition</a></li>
+                          <li><i class="ion-ios-arrow-forward"></i> <a href="#">Privacy policy</a></li>
+                      </ul>
+                  </div>
+
+                  <div class="col-lg-3 col-md-6 footer-links">
+                      <h4>Useful Links</h4>
+                      <ul>
+                          <li><i class="ion-ios-arrow-forward"></i> <a href="#team">Team</a></li>
+                          <li><i class="ion-ios-arrow-forward"></i> <a href="#contact">Contact</a></li>
+                          <li><i class="ion-ios-arrow-forward"></i> <a href="#faq">FAQ</a></li>
+                      </ul>
+                  </div>
+
+                  <div class="col-lg-3 col-md-6 footer-contact" style="font-size: 1.5rem;">
+                      <h4>Contact Us</h4>
+                      <p>
+                          PIA road<br>
+                          Johar Town<br>
+                          Lahore <br>
+                          <strong>Phone:</strong> +923094055144<br>
+                          <strong>Email:</strong> info@example.com<br>
+                      </p>
+
+                      <div class="social-links">
+                          <a href="https://www.facebook.com/"><i class="ion-logo-facebook"></i></a>
+                          <a href="https://twitter.com/login?lang=en"><i class="ion-logo-twitter"></i></a>
+                          <a href="https://www.linkedin.com/"><i class="ion-logo-linkedin"></i></a>
+                          <a href="https://www.instagram.com/"><i class="ion-logo-instagram"></i></a>
+                          <a href="https://accounts.google.com/servicelogin/signinchooser?flowName=GlifWebSignIn&flowEntry=ServiceLogin"><i class="ion-logo-googleplus"></i></a>
+                      </div>
+
+                  </div>
+
+                  <div class="col-lg-3 col-md-6 footer-newsletter">
+                      <h4>Subscription</h4>
+                      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat totam hic cumque, ratione voluptatum dolor voluptas qui? Modi fuga cupiditate neque voluptates ratione id officiis, at repellendus odio! Tempore, ut!</p>
+                      <form action="" method="post">
+                          <input type="email" name="email"><input type="submit"  value="Subscribe">
+                      </form>
+                  </div>
+
+              </div>
+          </div>
+      </div>
+
+      <div class="container">
+          <div class="row align-items-center">
+              <div class="col-md-6 copyright" style="color: #1b1818; font-size: 1.3rem;">
+                  Copyright &copy; 2024 Kaam Karwao. All Rights Reserved.
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <a href="#" class="back-to-top"><i class="ion-ios-arrow-up"></i></a>
+  
+  <script src="./js/main.js"></script>
+</body>
+<script src="https://www.gstatic.com/firebasejs/10.12.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.1/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.1/firebase-database.js"></script>
+<script src="./js/main.js"></script>
+
+</html>
